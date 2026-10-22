@@ -1,0 +1,10 @@
+# BOOM 简易倒计时计时器 默认配置
+# 目标芯片: ESP32-S3
+CONFIG_IDF_TARGET="esp32s3"
+
+# 主任务栈 (UI 渲染在 app_task 中进行)
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# 使用 -O2 优化: gcc 14.2.0 在默认 -Og 下编译 esp_lcd RGB 驱动会触发编译器
+# 内部错误 (ICE), 与项目代码无关; -O2 下无此问题
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
